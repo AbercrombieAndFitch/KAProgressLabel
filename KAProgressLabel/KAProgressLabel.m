@@ -33,7 +33,7 @@
     [self removeObserver:self forKeyPath:@"startDegree"];
     [self removeObserver:self forKeyPath:@"endDegree"];
     [self removeObserver:self forKeyPath:@"roundedCornersWidth"];
-
+    
     [self.startLabel removeObserver:self forKeyPath:@"text"];
     [self.endLabel removeObserver:self forKeyPath:@"text"];
 }
@@ -100,8 +100,8 @@
     [self addSubview:self.endLabel];
     
     // Logic
-    self.startDegree        = 0;
-    self.endDegree          = 0;
+    self.startDegree        = -180;
+    self.endDegree          = -180;
     self.progress           = 0;
     
     // KVO
@@ -152,29 +152,29 @@
 
 - (CGFloat)startDegree
 {
-    return _startDegree +90;
+    return _startDegree + 270;
 }
 
 - (CGFloat)endDegree
 {
-    return _endDegree +90;
+    return _endDegree + 270;
 }
 
 - (CGFloat)progress
 {
-    return self.endDegree/360;
+    return self.endDegree/270;
 }
 
 #pragma mark - Setters
 
 -(void)setStartDegree:(CGFloat)startDegree
 {
-    _startDegree = startDegree - 90;
+    _startDegree = startDegree - 270;
 }
 
 -(void)setEndDegree:(CGFloat)endDegree
 {
-    _endDegree = endDegree - 90;
+    _endDegree = endDegree - 270;
 }
 
 -(void)setProgress:(CGFloat)progress
@@ -182,7 +182,7 @@
     if(self.startDegree != 0){
         [self setStartDegree:0];
     }
-    [self setEndDegree:progress*360];
+    [self setEndDegree:progress*270];
 }
 
 #pragma mark - Animations
@@ -262,7 +262,7 @@
     float y = touchLocation.y - self.frame.size.height/2;
     int angle = KARadiansToDegrees(atan(y/x));
     angle += (x>=0)?  90 : 270;
-
+    
     // Interact
     if(!self.isStartDegreeUserInteractive) // Only End
     {
@@ -294,7 +294,7 @@
     CGFloat archRadius = (circleRect.size.width) / 2.0;
     
     CGFloat trackStartAngle = KADegreesToRadians(0);
-    CGFloat trackEndAngle = KADegreesToRadians(360);
+    CGFloat trackEndAngle = KADegreesToRadians(90);
     CGFloat progressStartAngle = KADegreesToRadians(_startDegree);
     CGFloat progressEndAngle = KADegreesToRadians(_endDegree);
     
@@ -333,7 +333,7 @@
 
 #pragma mark - Helpers
 
-- (CGRect) rectForDegree:(float) degree andRect:(CGRect) rect 
+- (CGRect) rectForDegree:(float) degree andRect:(CGRect) rect
 {
     float x = [self xPosRoundForAngle:degree andRect:rect] - _roundedCornersWidth/2;
     float y = [self yPosRoundForAngle:degree andRect:rect] - _roundedCornersWidth/2;
