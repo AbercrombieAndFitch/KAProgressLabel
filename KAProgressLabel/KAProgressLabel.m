@@ -215,7 +215,7 @@
 
 -(void)setProgress:(CGFloat)progress timing:(TPPropertyAnimationTiming)timing duration:(CGFloat)duration delay:(CGFloat)delay
 {
-    [self setEndDegree:(progress*360) timing:timing duration:duration delay:delay];
+    [self setEndDegree:(progress*270) timing:timing duration:duration delay:delay];
 }
 
 - (void) stopAnimations
