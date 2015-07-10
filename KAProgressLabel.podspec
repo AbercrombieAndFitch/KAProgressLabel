@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'KAProgressLabel'
-  s.version  = '4.0.0'
+  s.version  = '4.1.0'
   s.platform = :ios
   s.license  = {:type =>'Apache V2.0', :file =>'LICENSE'}
   s.summary  = 'Circular progress view. Mod of KAProgressLabel by Alexis Creuzot.'
