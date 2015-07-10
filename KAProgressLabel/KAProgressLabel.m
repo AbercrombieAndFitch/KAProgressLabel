@@ -190,7 +190,7 @@
 -(void)setStartDegree:(CGFloat)startDegree timing:(TPPropertyAnimationTiming)timing duration:(CGFloat)duration delay:(CGFloat)delay
 {
     TPPropertyAnimation *animation = [TPPropertyAnimation propertyAnimationWithKeyPath:@"startDegree"];
-    animation.fromValue = @(_startDegree+90);
+    animation.fromValue = @(_startDegree+270);
     animation.toValue = @(startDegree);
     animation.duration = duration;
     animation.startDelay = delay;
@@ -203,7 +203,7 @@
 -(void)setEndDegree:(CGFloat)endDegree timing:(TPPropertyAnimationTiming)timing duration:(CGFloat)duration delay:(CGFloat)delay
 {
     TPPropertyAnimation *animation = [TPPropertyAnimation propertyAnimationWithKeyPath:@"endDegree"];
-    animation.fromValue = @(_endDegree+90);
+    animation.fromValue = @(_endDegree+270);
     animation.toValue = @(endDegree);
     animation.duration = duration;
     animation.startDelay = delay;
