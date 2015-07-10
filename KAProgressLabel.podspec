@@ -1,14 +1,13 @@
 Pod::Spec.new do |s|
   s.name     = 'KAProgressLabel'
-  s.version  = '3.2'
+  s.version  = '4.0.0'
   s.platform = :ios
   s.license  = {:type =>'Apache V2.0', :file =>'LICENSE'}
-  s.summary  = 'Circular progress view.'
-  s.homepage = 'https://github.com/kirualex/KAProgressLabel'
-  s.author   = { 'Alexis Creuzot' => 'alexis.creuzot@gmail.com' }
-  s.source   = { :git => 'https://github.com/kirualex/KAProgressLabel.git',
-                  :tag => '3.2'}
-  s.description = 'Circular progress view for iOS with customizable widths and colors, user interactivity and more.'
+  s.summary  = 'Circular progress view. Mod of KAProgressLabel by Alexis Creuzot.'
+  s.homepage = 'https://github.com/AbercrombieAndFitch/KAProgressLabel'
+  s.author   = { 'Harlan Kellaway' => 'harlan@prolificinteractive.com' }
+  s.source   = { :git => 'https://github.com/AbercrombieAndFitch/KAProgressLabel.git',
+                  :tag => s.version.to_s }
   s.source_files = 'KAProgressLabel/*.{h,m}'
   s.requires_arc =  true
   s.framework = 'QuartzCore'
