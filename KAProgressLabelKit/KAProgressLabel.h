@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Alexis Creuzot. All rights reserved.
 //
 
-#import "TPPropertyAnimation.h"
+#import <KAProgressLabelKit/TPPropertyAnimation.h>
 
 @class KAProgressLabel;
 typedef void(^labelValueChangedCompletion)(KAProgressLabel *label);
